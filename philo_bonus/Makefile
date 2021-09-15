@@ -22,10 +22,10 @@ OFLAGS			:=	-O3
 
 deps 			:= $(patsubst %.o,%.d,$(OBJS))
 
-all:			$(NAME)
+all:			$(NAME) Makefile
 
 $(NAME):		$(OBJS) Makefile
-				$(COMPILER) $(CFLAGS) $(OBJS) -o $(NAME) 
+				$(COMPILER) $(OFLAGS) $(CFLAGS) $(OBJS) -o $(NAME) 
 
 -include		$(deps)
 DEPFLAGS	 	= -MMD -MF $(@:.o=.d)

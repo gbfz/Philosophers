@@ -25,7 +25,7 @@ deps 			:= $(patsubst %.o,%.d,$(OBJS))
 
 all:			$(NAME) Makefile
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) Makefile
 				$(COMPILER) $(OFLAGS) $(CFLAGS) $(OBJS) -o $(NAME) 
 
 -include		$(deps)
